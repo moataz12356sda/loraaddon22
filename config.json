@@ -1,7 +1,7 @@
 {
-  "name": "localaddonlora",
+  "name": "localaddonlora22",
   "version": "1.0",
-  "slug": "localaddonlora",
+  "slug": "localaddonlora22",
   "description": "localdatabase v2 lora",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "application",
@@ -32,3 +32,4 @@
   "host_network" : true ,
   "hassio_api": true
 }
+
