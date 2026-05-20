@@ -1,26 +1,15 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
-ENV LANG C.UTF-8
-# Copy data for add-on
-COPY run.sh /
-RUN chmod a+x /run.sh
+FROM python:3.9-alpine
 
-CMD [ "/run.sh" ]
+ENV LANG=C.UTF-8
+ENV PYTHONUNBUFFERED=1
 
-FROM python:3.9
+WORKDIR /app
 
+RUN pip install --no-cache-dir paho-mqtt influxdb
 
+COPY main.py /app/main.py
+COPY run.sh /app/run.sh
 
-COPY config /config
+RUN chmod +x /app/run.sh
 
-ADD main.py .
-
-
-RUN pip install paho-mqtt 
-RUN pip install influxdb
-RUN pip install PyCRC-Hex
-
-
-CMD ["python3" , "./main.py"]
-
-
+CMD ["/app/run.sh"]
