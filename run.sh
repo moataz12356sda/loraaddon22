@@ -1,2 +1,4 @@
-#!/usr/bin/with-contenv bashio
-echo Hello world!
+#!/bin/sh
+
+echo "Starting mostorodaddon..."
+exec python -u /app/main.py
