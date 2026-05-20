@@ -3,7 +3,7 @@
   "version": "1.0",
   "slug": "localaddonlora22",
   "description": "localdatabase v2 lora",
-  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "arch": ["amd64"],
   "startup": "application",
   "boot": "auto",
   "options": {"database_port": "8086",
