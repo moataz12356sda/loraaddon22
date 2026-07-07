@@ -30,7 +30,7 @@ measurement = config.get('measurement', 'default_measurement')
 def ConvertKSA(packet):
     hour = packet[46:48]
     print(int(hour, 16))
-    newtime = str(hex(int(hour, 16) + 1)).replace("0x", "")
+    newtime = str(hex(int(hour, 16) )).replace("0x", "")
     if len(newtime) == 1:
         newtime = "0" + newtime
     newpacket = packet[:46] + newtime + packet[48:]
