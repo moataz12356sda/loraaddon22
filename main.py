@@ -109,14 +109,14 @@ def SendPacketToServer(packet_hex: str) -> bool:
     On failure, it saves the original packet to the holding database.
     """
     original_packet = packet_hex  # keep for backup
-    ksa_packet = ConvertKSA(packet_hex)
+    # ksa_packet = ConvertKSA(packet_hex)
 
     try:
         print("sending to skarpt server")
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.settimeout(5)  # optional timeout
         s.connect((Serverip, Serverport))
-        s.sendall(binascii.unhexlify(ksa_packet))
+        s.sendall(binascii.unhexlify(original_packet))
         s.close()
         return True
     except Exception as e:
